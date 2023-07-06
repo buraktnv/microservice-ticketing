@@ -5,14 +5,14 @@ on:
     branches:
       - main
     paths:
-      - 'tickets/**'
+      - "tickets/**"
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: echo "$DOCKER_PASSWORD" docker login -u $DOCKER_USERNAME --password-stdin 
+      - run: echo "$DOCKER_PASSWORD" docker login -u $DOCKER_USERNAME --password-stdin
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
