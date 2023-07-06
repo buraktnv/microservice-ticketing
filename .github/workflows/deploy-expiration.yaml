@@ -12,12 +12,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+      - run: echo "$DOCKER_PASSWORD" docker login -u $DOCKER_USERNAME --password-stdin 
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-      - run: cd expiration && docker build -t cygnetops/expiration .
-      - run: docker push cygnetops/expiration
+      - run: cd expiration && docker build -t doxlee/expiration .
+      - run: docker push doxlee/expiration
       - uses: digitalocean/action-doctl@v2
         with:
           token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
