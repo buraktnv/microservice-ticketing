@@ -5,7 +5,6 @@ import cookieSession from "cookie-session";
 import { errorHandler, NotFoundError, currentUser } from "@cygnetops/common-v2";
 import { createChargeRouter } from "./routes/new";
 
-/* v1 */
 const app = express();
 app.set("trust proxy", true);
 app.use(json());
