@@ -9,7 +9,7 @@ import { signinRouter } from "./routes/signin";
 import { signoutRouter } from "./routes/signout";
 import { signupRouter } from "./routes/signup";
 
-/* github actions */
+/* github actions v1 */
 const app = express();
 app.set("trust proxy", true);
 app.use(json());
