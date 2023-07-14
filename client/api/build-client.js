@@ -5,7 +5,7 @@ const buildClient = ({ req }) => {
     // We are on the server
 
     return axios.create({
-      baseURL: "ticketing.dev",
+      baseURL: "http://159.223.240.117/",
       headers: req.headers,
     });
   } else {
